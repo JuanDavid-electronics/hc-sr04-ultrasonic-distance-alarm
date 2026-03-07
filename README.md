@@ -30,9 +30,10 @@ Ideal para alarmas de proximidad, robots anti-choque o proyectos IoT básicos.
 
 ## Fotos del prototipo
 
-![Montaje completo](images/foto-montaje.jpg)
-![Sensor ultrasónico](images/foto-sensor.jpg)
-![LED rojo encendido (alerta)](images/foto-led-encendido.jpg)
+![ultrasonico1](https://github.com/user-attachments/assets/91e059fa-34f3-48f5-a811-9fc8489403fa)
+![ultrasonico3](https://github.com/user-attachments/assets/30d57fa9-06df-45a9-8735-b2c2a3fe7784)
+![ultrasonico2](https://github.com/user-attachments/assets/8fd85b7d-fa7a-4f50-90e5-0258895bfc86)
+
 
 ## Video de funcionamiento
 [Ver demo en YouTube](https://youtu.be/TU_VIDEO_ID)  
