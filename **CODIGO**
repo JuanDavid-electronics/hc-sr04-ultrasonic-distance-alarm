@@ -1,0 +1,62 @@
+#include <Arduino.h>
+
+// ================================================
+// Proyecto: Sensor Ultrasónico con Alarma LED
+// Muestra distancia en Serial Monitor
+// Enciende LED rojo si el objeto está muy cerca
+// Juan David Moreno Jurado
+// ================================================
+
+// Pines del sensor HC-SR04
+const int trigPin = 9;   // Pin Trigger
+const int echoPin = 10;  // Pin Echo
+
+// Pin del LED rojo
+const int ledRojo = ;  // Puedes cambiar a otro pin si quieres
+
+// Distancia crítica (en cm) - cambia este valor según necesites
+const int distanciaCritica = 20;
+
+void setup() {
+  Serial.begin(9600);           // Inicia comunicación serial
+  pinMode(trigPin, OUTPUT);     // Trigger como salida
+  pinMode(echoPin, INPUT);      // Echo como entrada
+  pinMode(ledRojo, OUTPUT);     // LED como salida
+  
+  digitalWrite(ledRojo, LOW);   // LED apagado al inicio
+  
+  Serial.println("=== Sensor Ultrasónico HC-SR04 ===");
+  Serial.println("Mostrando distancia en cm...");
+  Serial.println("LED rojo se enciende si < " + String(distanciaCritica) + " cm");
+  Serial.println("-------------------------------");
+}
+
+void loop() {
+  // 1. Generar pulso Trigger
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // 2. Medir tiempo de eco
+  long duracion = pulseIn(echoPin, HIGH);
+
+  // 3. Calcular distancia (velocidad del sonido = 0.034 cm/µs)
+  float distancia = duracion * 0.034 / 2;
+
+  // 4. Mostrar en Monitor Serial
+  Serial.print("Distancia: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
+
+  // 5. Control del LED rojo
+  if (distancia > 0 && distancia < distanciaCritica) {
+    digitalWrite(ledRojo, HIGH);   // ¡Objeto muy cerca! LED rojo ON
+    Serial.println("¡ALERTA! Objeto en zona crítica");
+  } else {
+    digitalWrite(ledRojo, LOW);    // Todo bien → LED rojo OFF
+  }
+
+  delay(200);   // Actualiza cada 200 ms (no satura el monitor)
+}
