@@ -51,5 +51,11 @@ if (distancia > 0 && distancia < distanciaCritica) {
   digitalWrite(ledRojo, HIGH);
   Serial.println("¡ALERTA! Objeto en zona crítica");
 } else {
+
+Disponible para proyectos freelance similares en Workana: sensores de distancia, alarmas, automatización, IoT básico con Arduino/ESP32.
+¡Contáctame para colaboraciones!
+Hecho con ❤️ por Juan David Moreno Jurado
+📍 Zarzal / Cali, Valle del Cauca, Colombia
+GitHub: github.com/JuanDavid-electronics
   digitalWrite(ledRojo, LOW);
 }
