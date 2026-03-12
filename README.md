@@ -36,8 +36,8 @@ Ideal para alarmas de proximidad, robots anti-choque o proyectos IoT básicos.
 
 
 ## Video de funcionamiento
-[Ver demo en YouTube](https://youtu.be/TU_VIDEO_ID)  
-*(Sube un video corto a YouTube como "no listado" y pega el enlace aquí)*
+[Ver demo en YouTube](https://youtube.com/shorts/paYnZs_GQvg?feature=share)  
+
 
 ## Cómo replicar
 1. Clona este repositorio
